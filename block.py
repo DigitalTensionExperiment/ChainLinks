@@ -3,11 +3,18 @@ import hashlib
 
 class Block(object):
 
+    '''
+     A class which handles a block while a node is running; 
+    '''
+
     def __init__(self, dictX):
 
-        ''' header: {index; timestamp; data; previous_hash; nonce;} '''
+        ''' 
+        header: {index; timestamp; data; previous_hash; nonce;}  
+        '''
 
         for element in dictX.values():
+            # first making sure dictX is a dictionary:  
             if isinstance(element, dictX):
                 for key, val in dictX.items():
                     setattr(self, key, val)
