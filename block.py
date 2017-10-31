@@ -14,7 +14,7 @@ class Block(object):
         '''
 
         for element in dictX.values():
-            # first making sure dictX is a dictionary:  
+            # first making sure dictX is a dictionary:
             if isinstance(element, dictX):
                 for key, val in dictX.items():
                     setattr(self, key, val)
