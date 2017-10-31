@@ -50,6 +50,12 @@ verify( com, key, msg ) := ( H(key | msg) == com )
 > puzzle friendly
 
 
+Build a search puzzle where searching a very large space in order to find a solution
+and there are no short cuts other than searching this large space:
+** Given puzzle_id (from a high min entropy distribution) && a target set Y
+try to find x s.t. H(puzzle_id | x) is an element in {Y};
+
+
 [SHA-256]
 Takes the msg and breaks it up into blocks of 256 bits in size
 (needs padding b/c the msg isn't going to necessarily be a multiple of the block size)
@@ -60,13 +66,18 @@ At the end, will have consumed all the blocks of the msg and the padding = 256 b
 If C is collision free, then the entire hash function is collision free;
 
 
+Change the contents of a block >> mismatch between itself and it's hashpointer;
+** tamper evident log built out of a blockchain;
 
+binary tree with hashpoints = Merkel tree
+** to prove that any given block belongs in the chain,
+only need to check matches up the branch to the root: O(log n) items;
 
+** verifying membership in cyclic and acyclic data structures **
 
-Build a search puzzle where searching a very large space in order to find a solution
-and there are no short cuts other than searching this large space:
-** Given puzzle_id (from a high min entropy distribution) && a target set Y
-try to find x s.t. H(puzzle_id | x) is an element in {Y};
+Digital signatures:
+- unforgability property
+
 
 
 
