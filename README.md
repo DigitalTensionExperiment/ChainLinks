@@ -25,7 +25,7 @@ values of x must be spread out s.t. no value of x is highly likely;
 H(r|x) = takes all the bits of r and put after them all the bits of x;
 Given the hash or r together with x, its infeasible to find x;
 ** high min entropy **
-There's no particular value of r that would occur with more than negible probability;
+There's no particular value of r that would occur with more than negligible probability;
 
 
 commitment - taking a value and sealing it in an envelop;
@@ -77,6 +77,36 @@ only need to check matches up the branch to the root: O(log n) items;
 
 Digital signatures:
 - unforgability property
+
+
+Sign a hash pointer: signature protects the whole structure;
+**digitally signing an entire chain;
+
+ECDSA: elliptic curve digital signature algorithm
+
+
+
+
+
+[Decentralized Identity Management]
+
+Take a public key from a digital signature scheme
+and equate it to an identity;
+If you know the secret key associated to the public key
+you can sign messages with the secret key, making statements as the public key;
+
+pk = actor/identity
+
+Make new identities by generating key pairs (sk, pk)
+in our digital signature scheme
+
+H(pk) = "address"
+
+
+
+
+create-coins transactions
+pay-coins transactions
 
 
 
